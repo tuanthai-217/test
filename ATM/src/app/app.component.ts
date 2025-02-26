@@ -128,7 +128,7 @@ export class AppComponent {
         break;
       case TABLE_TYPE_ACTION.EDIT:
         if (this.myForm.valid) {
-          this.userService.createATM(this.myForm).subscribe({
+          this.userService.editATM(this.myForm).subscribe({
             next: (res) => {
               console.log(res);
             },
@@ -140,17 +140,13 @@ export class AppComponent {
         }
         break;
         case TABLE_TYPE_ACTION.DELETE:
-        if (this.myForm.valid) {
-          this.userService.createATM(this.myForm).subscribe({
+          this.userService.deleteATM(this.myForm).subscribe({
             next: (res) => {
               console.log(res);
             },
             error: (err) => {
             },
           });
-        } else {
-          console.log("Form chưa hợp lệ!");
-        }
         break;
 
       default:
